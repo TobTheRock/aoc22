@@ -46,7 +46,7 @@ impl Action {
         match strategy {
             Strategy::Win => action.winner(),
             Strategy::Loose => action.looser(),
-            Strategy::Draw => action.clone(),
+            Strategy::Draw => *action,
         }
     }
 
@@ -127,11 +127,11 @@ pub fn main_day2() {
 
     let test_data = std::fs::read_to_string("./data/day2.txt").unwrap();
 
-    let rounds_first_try = test_data.lines().map(|l| Round::from_my_strategy(l));
+    let rounds_first_try = test_data.lines().map(Round::from_my_strategy);
     let total_score: u64 = rounds_first_try.map(|r| r.score()).sum();
     println!("Total score {}", total_score);
 
-    let rounds_next_try = test_data.lines().map(|l| Round::from_actual_strategy(l));
+    let rounds_next_try = test_data.lines().map(Round::from_actual_strategy);
     let total_score: u64 = rounds_next_try.map(|r| r.score()).sum();
     println!("Total score {}", total_score);
 }
