@@ -81,8 +81,7 @@ fn find_badge(backpacks: &[Backpack]) -> Item {
 }
 
 pub fn main_day3() {
-    println!("----- DAY 2 --------");
-
+    println!("----- DAY 3 --------");
     let test_data = std::fs::read_to_string("./data/day3.txt").unwrap();
 
     let backpacks: Vec<Backpack> = test_data.lines().map(Backpack::from).collect();
