@@ -30,7 +30,7 @@ struct AssignmentPair {
 
 impl From<&&str> for AssignmentPair {
     fn from(s: &&str) -> Self {
-        let mut assignments = s.split(",").map(Assignment::from);
+        let mut assignments = s.split(',').map(Assignment::from);
         Self {
             a: assignments.next().unwrap(),
             b: assignments.next().unwrap(),
