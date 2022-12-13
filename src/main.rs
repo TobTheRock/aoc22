@@ -6,10 +6,11 @@ mod day5;
 mod day6;
 mod day7;
 mod day8;
+mod day9;
 
 use crate::{
     day1::main_day1, day2::main_day2, day3::main_day3, day4::main_day4, day5::main_day5,
-    day6::main_day6, day7::main_day7, day8::main_day8,
+    day6::main_day6, day7::main_day7, day8::main_day8, day9::main_day9,
 };
 fn main() {
     println!("Advent of code 2022");
@@ -22,4 +23,5 @@ fn main() {
     main_day6();
     main_day7();
     main_day8();
+    main_day9();
 }
